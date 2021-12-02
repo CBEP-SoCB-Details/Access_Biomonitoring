@@ -5,8 +5,8 @@
     `Biomonitoring_Samples_Parsed.csv` and `Biomonitoring_Stations_Parsed.csv`
     
 3.  In GIS, select stations found in the Casco Bay watershed, saved as 
-    `CB_Biomonitoting_Stations.csv` and `CB_Invertebrate_Stations.csv`, for all
-    biomonitoting stations, and stream invertebrate invertebrate biomonitoring
+    `CB_Biomonitoring_Stations.csv` and `CB_Invertebrate_Stations.csv`, for all
+    biomonitoring stations, and stream invertebrate invertebrate biomonitoring
     stations respectively.
     
 4.  Run `SelectedStationDataSelector_all.py`. and
@@ -59,22 +59,18 @@ Users should be aware that the identity of some data columns is also hard
 coded into the script, so results should be checked carefully for correct
 column headers and missing data columns.
 
-We have run the script through Spyder and Idle.  When we double click on
-the python file in Windows, it briefly opens a command window, but
-does not generate any output.  Running Python scripts directly from the
-desktop in Windows is often problematic.
-
 ## Casco Bay Watershed Station Lists
 We worked in ArcGIS to generate lists of biomonitoring
 stations  and invertebrate biomonitoring stations in the Casco Bay Watershed. 
-These  file is called `CB_Biomonitoting_Stations.csv` and
-`CB_Invertebrate_Stations.csv`.  The process followed the obvious steps,
+
+These files are called `Biomonitoring_Stations_CB.csv` and
+`Invertebrate_Stations_CB.csv`.  The process followed the obvious steps,
 of importing latitude and longitude data from 
 `Biomonitoring_Stations_Parsed.csv` into ArcGIS as an event layer, exporting
 the data as a shapefile,  selecting points that overlap the Casco Bay
-Watershed, (Filtering to Stream Invertebrate sampling stations if necessary).  The only complex step involvs adding local imperviousness to the data.  That involved
-running a spatial merge with the Catchments Data Layer (see below)to extract
-estimates of impervious cover in local catchements, and exporting the data
+Watershed, (Filtering to Stream Invertebrate sampling stations if necessary).  The only complex step involved adding local imperviousness to the data.  That involved
+running a spatial merge with the Catchments Data Layer (see below) to extract
+estimates of impervious cover in local catchments, and exporting the data
 from ArcGIS. We removed unnecessary data colums, and changed the file
 extension to ".csv".
 
@@ -104,7 +100,7 @@ the underlying data associated with each biomonitoring sample, based on the
 consistent format of links embedded in the KML source files.  To limit demand
 on DEP servers, the script only (a) accesses data on invertebrate
 biomonitoting stations, (b) incorporates a number of delays before retrying
-URLS that do not work. Expect teh script to take a long time (~ 15 minutes)
+URLS that do not work. Expect the script to take a long time (~ 15 minutes)
 to run.
 
 The script does not successfully download data for all samples, but it gets
