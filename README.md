@@ -2,7 +2,7 @@
 
 Maine's Department of Environmental Protection makes certain data available on-line 
 at <https://www.maine.gov/dep/gis/datamaps/>.   Among those data, the site 
-exposes GIS dta on stream biomonitoring via a `KML` file, `lawb_biomonitoring.kml`.
+exposes GIS data on stream biomonitoring via a `KML` file, `lawb_biomonitoring.kml`.
 
 `KML` files are used by (*inter alia*) Google Earth to represent geographic data.
 At their heart, `KML` files are a specific flavor of `XML`, and they can be parsed
@@ -10,22 +10,33 @@ successfully by tools able to parse KML files.  Unfortunately, KML files are als
 very flexible, and the data we are interested in finding can be buried in complex
 ways.
 
+The python code included in this repository is designed to parse data from KML
+files and store the encoded information in spreadsheet-style tabular data.  The
+code parses data from specific KML files produced and made available by Maine DEP.
+The code for examines, unpacks, accesses and organizes data provided by DEP, as
+wel las data accessible based on that data, by working our way back 
+from the exposed KML files to various supporting files.
+
 1. `KML` files are hierarchical, so that one `KML` file can refer to data embedded
-   in other files on the internet.  In fact, the raw `KML` file DEP exposes (above)
-   refers to several other files, that contain the actual geographic data.
+   in other files in the internet.  In fact, the raw `KML` file DEP exposes (above)
+   refers to several other files that contain the actual geographic data. The code
+   here works with those embedded files.  It is up to the user to download those
+   additional KML files manually, following instructions in `README.md`, 
+   `DATA_SOURCES.md`, and `DATA_NOTES.md` files.
+   
+2.  Closely related `KMZ` files are zip-encoded `KML` files, generally zipped along
+    with related information, such as symbols used to diplay the geographic data. Again,
+    when data is encapsulated in a KMZ file, users will need to "unzip" the files
+    manually to work with the KML files enclosed within.
 
-2. `KML` files often contain embedded data that is itself HTML encoded. The default
+2. `KML` files can contain embedded data that is HTML (not XML) encoded. The default
    way that ArcGIS creates `KML` files apparently embeds the attribute table for each
-   feature in an embedded `HTML` table. When we access the attributes, we need to
-   parse an HTML table embedded in a `XML` folder.
-
-3.  Closely related `KMZ` files are zip-encoded `KML` files, generally zipped along
-    with related information, such as symbols used to display the geographic data.
+   feature in an embedded `HTML` table. When we access attribute data, therefore, we 
+   need te find and correctly parse an HTML table embedded within each (XML) "placemark"
+   tag.
 
 4.  Some related metadata and associated detailed data is contained in files not
-    directly accessed by the KML files, but whose names can be inferred from the 
-    attribute data.
+    directly accessed via the KML files, but whose names can be inferred from the 
+    attribute data.  Some code in this repository attempts to download files based on
+    what appear to be DEP file naming conventions.
 
-The repository contains python code for examining, unpacking, accessing and
-organizing data derived from the data provided by DEP, by working our way back 
-from file to supporting file.
