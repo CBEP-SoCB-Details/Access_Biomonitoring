@@ -24,6 +24,6 @@ That file is modified and uploaded periodically, so the date of access matters.
 We accessed that file on April 17th of 2019 successfully.  In November of 2020,
 the file accessed through that URL contained only the "Statutory Class" field 
 for individual sample results, and not the "Final Determination".  We have
-contacted Maine DEP to alert them to the probem, but continue our analysis with the 
-a data accessed in 2019.
+contacted Maine DEP to alert them to the problem, but continue our analysis with the 
+data accessed in 2019.
 
