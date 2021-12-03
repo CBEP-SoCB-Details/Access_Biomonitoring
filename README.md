@@ -4,7 +4,7 @@ Maine's Department of Environmental Protection makes certain data available on-l
 at <https://www.maine.gov/dep/gis/datamaps/>.   Among those data, the site 
 exposes GIS data on stream biomonitoring via a `KML` file, `lawb_biomonitoring.kml`.
 
-`KML` files are used by (*inter alia*) Google Earth to represente geographic data.
+`KML` files are used by (*inter alia*) Google Earth to represent geographic data.
 At their heart, `KML` files are a specific flavor of `XML`, and they can be parsed
 successfully by tools able to parse KML files.  Unfortunately, KML files are also
 very flexible, and the data we are interested in finding can be buried in complex
@@ -20,7 +20,7 @@ from the exposed KML files to various supporting files.
 1. `KML` files are hierarchical, so that one `KML` file can refer to data embedded
    in other files in the internet.  In fact, the raw `KML` file DEP exposes (above)
    refers to several other files that contain the actual geographic data. The code
-   hree works with those embedded files.  It is up to the user to download those
+   here works with those embedded files.  It is up to the user to download those
    additional KML files manually, following instructions in `README.md`, 
    `DATA_SOURCES.md`, and `DATA_NOTES.md` files.
    
@@ -29,10 +29,10 @@ from the exposed KML files to various supporting files.
     when data is encapsulated in a KMZ file, users will need to "unzip" the files
     manually to work with the KML files enclosed within.
 
-2. `KML` files can contain embeded data that is HTML (not XML) encoded. The default
+2. `KML` files can contain embedded data that is HTML (not XML) encoded. The default
    way that ArcGIS creates `KML` files apparently embeds the attribute table for each
    feature in an embedded `HTML` table. When we access attribute data, therefore, we 
-   need te find and correctly parse an HTML table embeded within each (XML) "placemark"
+   need te find and correctly parse an HTML table embedded within each (XML) "placemark"
    tag.
 
 4.  Some related metadata and associated detailed data is contained in files not
