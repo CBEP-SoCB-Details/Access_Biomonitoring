@@ -71,7 +71,7 @@ the data as a shapefile,  selecting points that overlap the Casco Bay
 Watershed, (Filtering to Stream Invertebrate sampling stations if necessary).  The only complex step involved adding local imperviousness to the data.  That involved
 running a spatial merge with the Catchments Data Layer (see below) to extract
 estimates of impervious cover in local catchments, and exporting the data
-from ArcGIS. We removed unnecessary data colums, and changed the file
+from ArcGIS. We removed unnecessary data columns, and changed the file
 extension to ".csv".
 
 ## Casco Bay Watershed Sample Data
@@ -99,7 +99,7 @@ coded file names.  The final produced files are
 the underlying data associated with each biomonitoring sample, based on the
 consistent format of links embedded in the KML source files.  To limit demand
 on DEP servers, the script only (a) accesses data on invertebrate
-biomonitoting stations, (b) incorporates a number of delays before retrying
+biomonitoring stations, (b) incorporates a number of delays before retrying
 URLS that do not work. Expect the script to take a long time (~ 15 minutes)
 to run.
 
@@ -133,10 +133,10 @@ locations as follows (intermediate geospatial layers are not exposed in the Git 
     `CB_Inverebrate_Biomonitoring` shapefile included in the GIT archive.
 
 4.  Finally, we exported that files attribute table as a text (comma delimited) file,
-    as described above to create the Casco Bay Watershed Station List descrived above.
+    as described above to create the Casco Bay Watershed Station List described above.
 
 ## Catchments 
-Since Maine has no recent high resolution state-wide imperviouscover data, we
+Since Maine has no recent high resolution state-wide impervious cover data, we
 reused impervious cover data by catchment area we developed for the 2015
 State of the Bay Report.  These data are based on impervious cover estimates from
 Maine IF&W, based on a one meter pixel size.  Those estimates are based principally 
@@ -144,8 +144,8 @@ on aerial photography from 2007, so they represent on-the-ground conditions
 from over a decade ago, but they are the most recent values available.  
 
 Our derived data layer aggregated impervious cover data by (somewhat simplified)
-NAD+ V2 catchement areas.  We simplified the NAD+ V2 catchements principally to
-remove catchements under 50 Ha, and absorb some small coastal catchments
+NAD+ V2 catchment areas.  We simplified the NAD+ V2 catchements principally to
+remove catchments under 50 Ha, and absorb some small coastal catchments
 into adjacent areas that drain to the same coastal bodies of water.
 
 Our notes from 2015 describe preparation of this data sets as follows:
